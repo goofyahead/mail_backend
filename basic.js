@@ -53,7 +53,7 @@ openInbox(function(err, mailbox) {
                 messageId: util.normalizeMessageId(hdrs['message-id'][0].toString()),
                   references: []});
             }
-              // console.log('Headers for no. ' + msg.seqno + ': ' + show(hdrs));
+              console.log('Headers for no. ' + msg.seqno + ': ' + show(hdrs));
               console.log('Message ID '.red + hdrs['message-id'].toString().red);
             });
             msg.on('end', function() {
