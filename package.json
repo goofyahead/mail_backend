@@ -1,0 +1,15 @@
+{
+  "name": "imap-server",
+  "description": "email server to handle ",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+      "express": "3.x",
+      "request": "*",
+      "underscore": "",
+      "mongodb": "1.X",
+      "node-uuid": "*",
+      "colors": "*",
+      "imap" : "*"
+  }
+}
