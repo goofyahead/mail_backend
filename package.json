@@ -11,6 +11,7 @@
       "node-uuid": "*",
       "colors": "*",
       "imap" : "*",
-      "mailparser" : "*"
+      "mailparser" : "*",
+      "async" : "*"
   }
 }
