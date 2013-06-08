@@ -9,22 +9,26 @@ exports.getConfig = function (mail) {
 	return configs[ mail.match(regex)[1] ];
 }
 
-exports.getBoxes = function ( imap, mail, config) {
+exports.getBoxes = function ( imap, mail, config, cb) {
 	console.log('checking ' + mail);
 	var domain = mail.match(regex)[1];
 	if ( domain == 'yahoo.com'){
 		console.log('checking yahoo!');
 		imap.connect(function(err) {
 			imap.getBoxes(function (err, boxes){
+				// console.log(boxes);
 		    	for (var key in boxes) {
-		    		console.log(key);
-		    		config.box.push(key);
+		    		if (key != 'Bulk Mail' && key != 'Y! Conversations' && key != 'Trash') config.box.push(key);
+		    		// if (key == 'Draft') config.box.push(key);
 		    	}
+		    	console.log(config.box);
+		    	cb();
 	   		});
 	   		imap.logout();
 		});
 	} else {
 		console.log('standard');
+		cb();
 	}
 	
 }
