@@ -9,8 +9,8 @@ var util = mail.helpers;
 
 
 var imap = new Imap({
-      user: 'alex@ark.com',
-      password: '4L3j4ndr0',
+      user: 'something@gmail.com',
+      password: '**************',
       host: 'imap.gmail.com',
       port: 993,
       secure: true
